@@ -1,5 +1,4 @@
 # Lab 3 - PART 2 
-Due Feb 25th at 11:59PM
 
 
 Lab3Dir : ~/course_materials/materials/lab/3
@@ -9,6 +8,7 @@ main folder, where you'll run the program from (read top of main.go for details)
 shodan folder, where you'll be adding additional code, do not try to run this code independently
 
 
+<<<<<<< HEAD
 
 REST API Implementation
 
@@ -39,3 +39,5 @@ page (optional): [Integer] Page number to iterate over results; each page contai
 size (optional): [Integer] The number of tags to return (default: 10).
 sort (optional): [String] Sort the list based on a property. Possible values are: votes, timestamp
 orderby (optional): [String] Whether to sort the list in ascending or descending order. Possible values are: asc, desc
+=======
+>>>>>>> 9c8d064e20c879cead8993bc286c8210fe1357de
