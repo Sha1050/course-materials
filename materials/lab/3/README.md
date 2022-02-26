@@ -10,42 +10,32 @@ shodan folder, where you'll be adding additional code, do not try to run this co
 
 
 
-## Part 1(12 points)
+REST API Implementation
 
-Within {Lab3Dir}/shodan/shodan there are three files.
+Directory Methods
+ /shodan/query (function getQueries)
+ /shodan/query/search (function searchQueries)
+ /shodan/query/tags (function getQueryTags)
 
-Two access different [Shodan API methods](https://developer.shodan.io/api)
- - host.go →Host/Search
- - api.go → APIInfo
+implemented in main/main.go
 
-The third file `shodan.go` contains a helper function to create a new client (with the API you provide on the command line; see README's for more details on usage)
+Usage
+List the saved search queries
+Use this method to obtain a list of search queries 
 
-### Option 1: 
-Create another method file (like host.go/api.go) to access another method.
-### Option 2: 
-Extend host.go to build up more complex queries
-### Option 3: 
-Create a helper file to pull currently available facets and filters
+Command Run: 
+SHODAN_API_KEY="Replace your Key" go run main/main.go -query="webcam" -page="20" -size="10" -sort="DESC" -orderby="Field name"
 
-### Required:
-Create/Update the README in the shodan directory to discuss which option you selected and what files you created/modified.
+Arguments:
+-query="string"
+-page="string"
+-size="string"
+-sort="string"
+-orderby="string"
 
-## Part 2 (8 points)
-Extend {Lab3Dir}/main/main.go to use your new functionality
-
-### Required
-
- Create/Update the README in the main directory to discuss HOW to use your program (provide example command-line usages)
-
- # Submission
-
- ## Option 1 Preferred*
-* Update / Push Your Code to your github repo and 
-* then submit Link to your Public Repo on WyoCourses
-
-## Option 2: 
-* Download Lab 3 
-  * find the lab/3 folder in the navigation explorer, 
-  * right click, download
-* Rename it to YOURLASTNAME_3.tar 
-* upload it to WyoCourses
+Parameters
+query: [String] What to search for in the directory of saved search queries.
+page (optional): [Integer] Page number to iterate over results; each page contains 10 items
+size (optional): [Integer] The number of tags to return (default: 10).
+sort (optional): [String] Sort the list based on a property. Possible values are: votes, timestamp
+orderby (optional): [String] Whether to sort the list in ascending or descending order. Possible values are: asc, desc
