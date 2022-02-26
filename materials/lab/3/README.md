@@ -1,5 +1,4 @@
 # Lab 3 - PART 2 
-Due Feb 25th at 11:59PM
 
 
 Lab3Dir : ~/course_materials/materials/lab/3
