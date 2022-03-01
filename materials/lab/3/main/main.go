@@ -3,10 +3,6 @@
 // go build main.go
 // SHODAN_API_KEY=YOURAPIKEYHERE ./main <search term>
 
-// Build and Use this File to connnect with the shodan
-// go build main.go
-// SHODAN_API_KEY=YOURAPIKEYHERE ./main <search term>
-
 package main
 
 import (
