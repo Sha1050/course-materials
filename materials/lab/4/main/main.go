@@ -33,7 +33,7 @@ func main() {
 
 	http.Handle("/", router)
 
-	//start and listen to requests
+	//start & listen to requests
 	http.ListenAndServe(":8080", router)
 
 }
