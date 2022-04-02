@@ -1,1 +1,5 @@
-You might need to do a "go mod init bhg-scanner" or "go mod tidy"
+1. Port Scanner, wher we can have open/closed ports and export as csv file.
+2. Time function we use to quntify how much time we spend.
+3. we added time out to the connection.
+4. Open ports already exist in the code so, we added closed ports as well.
+5. To enahnce the output for easier consumption added , for white space seperation and add close ports
