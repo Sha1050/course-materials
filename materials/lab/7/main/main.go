@@ -1,6 +1,8 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"hscan/hscan"
 )
 
@@ -11,18 +13,24 @@ func main() {
 	var sha256hash = "95a5e1547df73abdd4781b6c9e55f3377c15d08884b11738c2727dbd887d4ced"
 
 	//TODO - Try to find these (you may or may not based on your password lists)
-	var drmike1 = "90f2c9c53f66540e67349e0ab83d8cd0"
-	var drmike2 = "1c8bfe8f801d79745c4631d09fff36c82aa37fc4cce4fc946683d7b336b63032"
+	var drmike1 = "36cb3251dfb3d2b4a559796498a2ac29"
+	var drmike2 = "92fd7a8f8a5fd34c953c72ccbc61fe553dae49991f4a0a2579899e2400eb047a"
 
-	// NON CODE - TODO
+	// NON CODE - TODO:
 	// Download and use bigger password file from: https://weakpass.com/wordlist/tiny  (want to push yourself try /small ; to easy? /big )
 
-	//TODO Grab the file to use from the command line instead; look at previous lab (e.g., #3 ) for examples of grabbing info from command line
-	var file = "wordlist.txt"
+	//TODO: Grab the file to use from the command line instead; look at previous lab (e.g., #3 ) for examples of grabbing info from command line
+
+	var DEFAULT_FILE = "main/wordlist.txt"
+	var file string
+	flag.StringVar(&file, "file", DEFAULT_FILE, "File param") // Pass -file="file name" as paramater e.g go run main/main.go -file="main/wordlist.txt"
+	flag.Parse()
 
 	hscan.GuessSingle(md5hash, file)
 	hscan.GuessSingle(sha256hash, file)
+	hscan.GuessSingle(drmike1, file)
+	hscan.GuessSingle(drmike2, file)
 	hscan.GenHashMaps(file)
-	hscan.GetSHA(sha256hash)
-	hscan.GetMD5(sha256hash)
+	fmt.Println(hscan.GetSHA(drmike2))
+	fmt.Println(hscan.GetMD5(drmike1))
 }

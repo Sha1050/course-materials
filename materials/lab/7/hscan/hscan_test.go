@@ -1,5 +1,4 @@
 // Optional Todo
-
 package hscan
 
 import (
@@ -7,10 +6,19 @@ import (
 )
 
 func TestGuessSingle(t *testing.T) {
-	got := GuessSingle("77f62e3524cd583d698d51fa24fdff4f") // Currently function returns only number of open ports
-	want := "foo"
-	if got != want {
-		t.Errorf("got %d, wanted %d", got, want)
+	GuessSingle("36cb3251dfb3d2b4a559796498a2ac29", "../main/misc-dictionary.txt") // Currently function returns only number of open ports
+}
+
+func TestGenHashMaps(t *testing.T) {
+	GenHashMaps("../main/misc-dictionary.txt")
+	got := md5lookup
+	// test will be pass
+	if got["36cb3251dfb3d2b4a559796498a2ac29"] != "drmike1" {
+		t.Errorf("got %q want %q", got, "36cb3251dfb3d2b4a559796498a2ac29")
+	}
+	// test will be fail
+	if got["36cb3251dfb3d2b4a559796498a2ac29"] != "moon1" {
+		t.Errorf("got %q want %q", got, "36cb3251dfb3d2b4a559796498a2ac29")
 	}
 
 }
